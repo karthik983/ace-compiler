@@ -13,6 +13,8 @@ function Editor() {
   const [code, setCode] = useState("");
   const [lang, setLang] = useState("javascript");
   const [mode, setMode] = useState("github");
+  const [height, setHeight] = useState("600px")
+  const [width, setWidth] = useState("750px")
   const onChange = (newValue) => {
     setCode(newValue);
   };
@@ -27,6 +29,16 @@ function Editor() {
     marginLeft: "20%",
     marginRight: "20%",
   };
+  const reset = {
+
+    outlineOffset: "-2px",
+    border: 0,
+    padding: 0,
+    cursor: "pointer",
+    // eslint no-dupe-keys:1
+    padding: "0.25rem 0.5rem",
+    margin: "0.25rem"
+  }
   const language = (e) => {
     setLang(e.target.value);
   };
@@ -37,6 +49,14 @@ function Editor() {
       setMode("github");
     }
   };
+
+  const clickHandler = () => {
+    setCode("")
+  }
+  const screenHandler = () => {
+    setHeight("800px")
+    setWidth("800px")
+  }
   return (
     <div id="container" style={container}>
       <div style={topbar}>
@@ -48,6 +68,14 @@ function Editor() {
           </label>
         </div>
         <div>Dark Mode </div>
+        <div className="reset" >
+          <button style={reset} onClick={clickHandler}><i className="fa fa-refresh" aria-hidden="true" style={{ width: "25px", height: "25px" }}></i></button>
+        </div>
+
+        <div className="fullscreen" >
+          <button style={reset} onClick={screenHandler} ><i className="fa fa-compress" aria-hidden="true" style={{ width: "25px", height: "25px" }}></i></button>
+        </div>
+
         <div>
           <select
             value={lang}
@@ -60,6 +88,7 @@ function Editor() {
             <option value="java">Java</option>
           </select>
         </div>
+
       </div>
       <div>
         <AceEditor
@@ -71,8 +100,8 @@ function Editor() {
           name="UNIQUE_ID_OF_DIV"
           wrapEnabled={true}
           enableBasicAutocompletion={true}
-          height="600px"
-          width="750px"
+          height={height}
+          width={width}
           editorProps={{ $blockScrolling: true }}
         />
       </div>
