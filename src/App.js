@@ -4,9 +4,6 @@ import Editor from "./components/editor";
 import "./App.css";
 
 function App() {
-  function onChange(newValue) {
-    console.log(newValue);
-  }
   return (
     <div className="App">
       <Navbar />
