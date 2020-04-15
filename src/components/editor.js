@@ -40,16 +40,18 @@ function Editor() {
   return (
     <div id="container" style={container}>
       <div style={topbar}>
+        <div>Light Mode</div>
         <div>
-          <label className="switch">
+          <label className="switch mx-2">
             <input type="checkbox" onClick={modeChange} />
             <span className="slider round"></span>
           </label>
         </div>
+        <div>Dark Mode </div>
         <div>
           <select
             value={lang}
-            className="form-control mx-2"
+            className="form-control mx-5"
             onChange={language}
           >
             <option value="javascript">Javascript</option>
