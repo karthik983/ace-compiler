@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AceEditor from "react-ace";
 import "ace-builds/webpack-resolver";
 import "ace-builds/src-noconflict/mode-javascript";
@@ -7,17 +7,25 @@ import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-twilight";
+
 // import "ace-builds/src-noconflict/worker-javascript";
 
 function Editor() {
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState(localStorage.getItem("code") || "");
+
   const [lang, setLang] = useState("javascript");
   const [mode, setMode] = useState("github");
-  const [height, setHeight] = useState("600px")
-  const [width, setWidth] = useState("750px")
+  const [height, setHeight] = useState("650px")
+  const [width, setWidth] = useState("1400px")
+  const [line, setLine] = useState(1);
+  const [char, setChar] = useState(0);
+
   const onChange = (newValue) => {
     setCode(newValue);
   };
+  useEffect(() => {
+    localStorage.setItem("code", code)
+  }, [code])
 
   const topbar = {
     display: "flex",
@@ -49,14 +57,20 @@ function Editor() {
       setMode("github");
     }
   };
+  const cursorChange = (selection) => {
+    setLine(selection.cursor.row + 1);
+    setChar(selection.cursor.column);
+  };
 
   const clickHandler = () => {
     setCode("")
   }
   const screenHandler = () => {
-    setHeight("800px")
-    setWidth("800px")
+    setHeight("1500px")
+    setWidth("1500px")
+    // ace.resize()
   }
+
   return (
     <div id="container" style={container}>
       <div style={topbar}>
@@ -90,7 +104,7 @@ function Editor() {
         </div>
 
       </div>
-      <div>
+      <div  >
         <AceEditor
           mode={lang}
           value={code}
@@ -102,8 +116,18 @@ function Editor() {
           enableBasicAutocompletion={true}
           height={height}
           width={width}
+          fontSize={25}
+          onCursorChange={cursorChange}
           editorProps={{ $blockScrolling: true }}
         />
+      </div>
+      <div style={topbar}>
+        <p>
+          Line : {line} , {char}
+        </p>
+        <button type="button" class="btn btn-secondary">
+          Submit
+        </button>
       </div>
     </div>
   );
