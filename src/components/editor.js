@@ -1,16 +1,11 @@
 import React from "react";
-import Navbar from "./components/navbar";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-github";
 
-function App() {
-  function onChange(newValue) {
-    console.log(newValue);
-  }
+function Editor() {
   return (
-    <div className="App">
-      <Navbar />
+    <div>
       <AceEditor
         mode="javascript"
         theme="github"
@@ -27,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Editor;
