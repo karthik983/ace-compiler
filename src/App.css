@@ -123,7 +123,33 @@ input:checked + .slider:before {
 }
 
 .btn-primary {
-	color: #fff;
+	color: #fff !important;
 	background-color: #33a950;
 	border-color: #33a950;
+}
+.btn-primary:hover {
+	color: #fff !important;
+	background-color: #33a950;
+	border-color: #33a950;
+}
+.btn-primary:active {
+	color: #fff !important;
+	background-color: #33a950;
+	border-color: #33a950;
+}
+a {
+	color: #33a950;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #33a950;
+	background-color: transparent;
+	text-decoration: underline;
+}
+a:active {
+	color: #33a950;
+	background-color: transparent;
+	text-decoration: underline;
 }
