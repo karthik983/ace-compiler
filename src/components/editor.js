@@ -85,13 +85,13 @@ function Editor() {
               onClick={clickHandler}
             >
               <i
-                className="fa fa-refresh fa-2x"
+                className="fa fa-refresh fa-lg"
                 aria-hidden="true"
                 style={{
                   width: "25px",
                   height: "25px",
                   color: "darkgray",
-                  paddingTop: "2px",
+                  paddingTop: "10px",
                 }}
               ></i>
             </button>
@@ -99,13 +99,13 @@ function Editor() {
           <div className=" fullscreen">
             <button style={reset} onClick={screenHandler}>
               <i
-                className="fa fa-expand fa-2x "
+                className="fa fa-expand fa-lg "
                 aria-hidden="true"
                 style={{
                   width: "25px",
                   height: "25px",
                   color: "darkgray",
-                  paddingTop: "2px",
+                  paddingTop: "10px",
                 }}
               ></i>
             </button>
@@ -156,7 +156,7 @@ function Editor() {
             </div>
           </div>
           <div className="ml-auto align-self-center mx-4 ">
-            <img src={Spin} alt="" style={{ width: "35px", height: "35px" }} />
+            Compiling ...<img src={Spin} alt="" style={{ width: "35px", height: "35px" }} />
           </div>
         </div>
       </div>
