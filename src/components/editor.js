@@ -147,11 +147,14 @@ function Editor() {
               ></i>
             </button>
           </div>
-          <div></div>
-          <div className="ml-auto align-self-center mx-4 ">
+          <div>
+            {" "}
             <div className="py-3 mr-4" style={{ fontSize: "20px" }}>
               Line : {line} Column : {char}
             </div>
+          </div>
+          <div className="ml-auto align-self-center mx-4 ">
+            <img src={Spin} alt="" />
           </div>
         </div>
       </div>
