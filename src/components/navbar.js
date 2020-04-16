@@ -8,7 +8,7 @@ function Navbar() {
     >
       <div className="pl-3">
         <a href="index.html" className="navbar-brand">
-          <img src={Img} style={{ height: "75%", width: "75%" }} alt="/" />
+          <img src={Img} style={{ height: "75%", width: "80%" }} alt="/" />
         </a>
       </div>
       <div>

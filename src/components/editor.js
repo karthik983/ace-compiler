@@ -60,23 +60,25 @@ function Editor() {
   };
 
   return (
-    <div>
-      <div className="container rounded-lg mt-5 px-0 shadow-lg">
+    <div
+      style={{ marginLeft: "250px", marginRight: "250px", marginTop: "10px" }}
+    >
+      <div className="container rounded-lg   px-0 shadow-lg">
         <div className="d-flex ">
-          <div className="p-2 ml-5 align-self-center ">Light Mode</div>
-          <div className=" pt-3">
+          <div className=" ml-5 px-2 align-self-center ">Light Mode</div>
+          <div className=" align-self-center" style={{ paddingTop: "8px" }}>
             <label className="switch ">
               <input
-                className="align-self-center"
+                className=" align-self-center"
                 type="checkbox"
                 onClick={modeChange}
               />
               <span className="slider round "></span>
             </label>
           </div>
-          <div className="mr-auto p-2 align-self-center">Dark Mode </div>
+          <div className="mr-auto px-2  align-self-center">Dark Mode </div>
 
-          <div className=" p-2 reset ">
+          <div className="  reset ">
             <button
               style={reset}
               className="align-self-center"
@@ -86,29 +88,29 @@ function Editor() {
                 className="fa fa-refresh fa-2x"
                 aria-hidden="true"
                 style={{
-                  width: "35px",
-                  height: "35px",
+                  width: "25px",
+                  height: "25px",
                   color: "darkgray",
                   paddingTop: "2px",
                 }}
               ></i>
             </button>
           </div>
-          <div className="p-2 fullscreen">
+          <div className=" fullscreen">
             <button style={reset} onClick={screenHandler}>
               <i
                 className="fa fa-expand fa-2x "
                 aria-hidden="true"
                 style={{
-                  width: "35px",
-                  height: "35px",
+                  width: "25px",
+                  height: "25px",
                   color: "darkgray",
                   paddingTop: "2px",
                 }}
               ></i>
             </button>
           </div>
-          <div className="p-2 mr-5 align-self-center">
+          <div className=" mr-5 align-self-center">
             <select
               value={lang}
               className="form-control mx-1 "
@@ -130,40 +132,40 @@ function Editor() {
             showPrintMargin={false}
             name="UNIQUE_ID_OF_DIV"
             wrapEnabled={true}
-            width="1140px"
-            height="700px"
-            fontSize={25}
+            width="890x"
+            height="500px"
+            fontSize={16}
             onCursorChange={cursorChange}
             editorProps={{ $blockScrolling: true }}
           />
         </div>
         <div className="d-flex">
-          <div className="p-2 fullscreen">
+          <div className="px-2 fullscreen">
             <button style={reset} onClick={screenHandler}>
               <i
                 className="fa fa-download fa-2x "
                 aria-hidden="true"
-                style={{ width: "35px", height: "35px", color: "darkgray" }}
+                style={{ width: "25px", height: "25px", color: "darkgray" }}
               ></i>
             </button>
           </div>
           <div>
             {" "}
-            <div className="py-3 mr-4" style={{ fontSize: "20px" }}>
+            <div className="py-2 mt-1 mr-4">
               Line : {line} Column : {char}
             </div>
           </div>
           <div className="ml-auto align-self-center mx-4 ">
-            <img src={Spin} alt="" />
+            <img src={Spin} alt="" style={{ width: "35px", height: "35px" }} />
           </div>
         </div>
       </div>
-      <div className="container px-0 my-5 d-flex">
-        <button type="button" className="btn btn-primary btn-lg px-5  ml-auto ">
+      <div className="container px-0 my-3 d-flex">
+        <button type="button" className="btn btn-primary btn px-5  ml-auto ">
           Compile
         </button>
       </div>
-      <div className="shadow-lg container rounded-lg px-0 my-5 ">
+      <div className="shadow-lg container rounded-lg px-0 my-3 ">
         <div>
           <div className="d-flex justify-content-between p-1">
             <div className="align-self-center ml-3">
@@ -180,7 +182,7 @@ function Editor() {
                 <i
                   className="fa fa-times fa-2x "
                   aria-hidden="true"
-                  style={{ width: "35px", height: "35px", color: "darkgray" }}
+                  style={{ width: "25px", height: "25px", color: "darkgray" }}
                 ></i>
               </button>
             </div>
