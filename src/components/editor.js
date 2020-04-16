@@ -73,7 +73,21 @@ function Editor() {
 					</div>
 					<div className="mr-auto px-2  align-self-center">Dark Mode </div>
 
-					<div className="  reset ">
+					<div className="reset">
+						<button style={reset} className="align-self-center" onClick={clickHandler}>
+							<i
+								className="fa fa-text-height fa-lg"
+								aria-hidden="true"
+								style={{
+									width: '25px',
+									height: '25px',
+									color: 'darkgray',
+									paddingTop: '10px'
+								}}
+							/>
+						</button>
+					</div>
+          <div className="reset">
 						<button style={reset} className="align-self-center" onClick={clickHandler}>
 							<i
 								className="fa fa-refresh fa-lg"
@@ -121,7 +135,7 @@ function Editor() {
 						wrapEnabled={true}
 						width="890x"
 						height="500px"
-						fontSize={16}
+						fontSize={18}
 						onCursorChange={cursorChange}
 						editorProps={{ $blockScrolling: true }}
 					/>
