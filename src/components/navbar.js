@@ -12,35 +12,35 @@ function Navbar() {
 				<ul className="navbar-nav  ">
 					<li className="nav-item  ">
 						<a href="#home" className="nav-link">
-							<span style={{ color: 'royalblue' }}>
+							<span style={{ color: '#33A950' }}>
 								<i className="fab fa-twitter fa-1x" />
 							</span>
 						</a>
 					</li>
 					<li className="nav-item  ">
 						<a href="#home" className="nav-link">
-							<span style={{ color: 'royalblue' }}>
+							<span style={{ color: '#33A950' }}>
 								<i className="fab fa-github fa-1x" />
 							</span>
 						</a>
 					</li>
 					<li className="nav-item ">
 						<a href="#explore-head-section" className="nav-link">
-							<span style={{ color: 'royalblue' }}>
+							<span style={{ color: '#33A950' }}>
 								<i className="fab fa-facebook-square fa-1x" />
 							</span>
 						</a>
 					</li>
 					<li className="nav-item  ">
 						<a href="#create-head-section" className="nav-link">
-							<span style={{ color: 'royalblue' }}>
+							<span style={{ color: '#33A950' }}>
 								<i className="fab fa-linkedin fa-1x" />
 							</span>
 						</a>
 					</li>
 					<li className="nav-item ">
 						<a href="#share-head-section" className="nav-link">
-							<span style={{ color: 'royalblue' }}>
+							<span style={{ color: '#33A950' }}>
 								<i className="fab fa-instagram fa-1x" />
 							</span>
 						</a>
