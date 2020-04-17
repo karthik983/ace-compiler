@@ -11,17 +11,17 @@ import 'ace-builds/src-noconflict/theme-vibrant_ink';
 import Spin from '../Spin.gif';
 
 function Editor() {
-	const [ code, setCode ] = useState(localStorage.getItem('code') || '');
-	const [ js, setJs ] = useState(localStorage.getItem('js') || ' ');
-	const [ python, setPython ] = useState(localStorage.getItem('python') || ' ');
-  const [ c, setC ] = useState(localStorage.getItem('c') || ' ');
-  const [pyth2,setPyth2]=useState(localStorage.getItem("pyth2")||" ")
-	const [ font, setFont ] = useState(18);
-	const [ lang, setLang ] = useState('javascript');
-	const [ mode, setMode ] = useState('katzenmilch');
-	const [ line, setLine ] = useState(1);
-	const [ char, setChar ] = useState(0);
-	const [ ip, setIp ] = useState('');
+	const [code, setCode] = useState(localStorage.getItem('code') || '//type your javascript code here');
+	const [js, setJs] = useState(localStorage.getItem('js') || '//type your javascript code here');
+	const [python, setPython] = useState(localStorage.getItem('python') || '#type your python code here');
+	const [c, setC] = useState(localStorage.getItem('c') || '//type your C code here');
+	const [pyth2, setPyth2] = useState(localStorage.getItem("pyth2") || "#type your python 2.7 code here")
+	const [font, setFont] = useState(18);
+	const [lang, setLang] = useState('javascript');
+	const [mode, setMode] = useState('katzenmilch');
+	const [line, setLine] = useState(1);
+	const [char, setChar] = useState(0);
+	const [ip, setIp] = useState('');
 	let timeStamp = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`;
 
 	const onChange = (newValue) => {
@@ -32,25 +32,25 @@ function Editor() {
 			setJs(newValue);
 		} else if (lang === 'c_cpp') {
 			setC(newValue);
-    }
-    else if(lang==="python2.7"){
-      setPyth2(newValue)
-    }
+		}
+		else if (lang === "python2.7") {
+			setPyth2(newValue)
+		}
 	};
 	useEffect(
 		() => {
 			localStorage.setItem('code', code);
 			localStorage.setItem('python', python);
 			localStorage.setItem('js', js);
-      localStorage.setItem('c', c);
-      localStorage.setItem("pyth2",pyth2)
+			localStorage.setItem('c', c);
+			localStorage.setItem("pyth2", pyth2)
 			const fetch = async () => {
 				const iPadd = await axios.get('https://api.ipify.org');
 				setIp(iPadd.data);
 			};
 			fetch();
 		},
-		[ code, python, js, c, pyth2 ]
+		[code, python, js, c, pyth2]
 	);
 
 	const reset = {
@@ -64,8 +64,8 @@ function Editor() {
 	};
 
 	const language = (e) => {
-      setLang(e.target.value);
-		
+		setLang(e.target.value);
+
 		if (e.target.value === 'javascript') {
 			if (code !== js) {
 				setCode(js);
@@ -78,14 +78,14 @@ function Editor() {
 			} else {
 				setCode('//type your C code here');
 			}
-		} else if(e.target.value === 'python'){
+		} else if (e.target.value === 'python') {
 			if (code !== python) {
 				setCode(python);
 			} else {
 				setCode('#type your python code here');
 			}
-    }
-    else if(e.target.value === 'python2.7'){
+		}
+		else if (e.target.value === 'python2.7') {
 			if (code !== pyth2) {
 				setCode(pyth2);
 			} else {
@@ -113,13 +113,13 @@ function Editor() {
 		} else if (lang === 'c_cpp') {
 			setCode('//type your C code here');
 			setC('//type your C code here');
-		} else if(lang==="python") {
+		} else if (lang === "python") {
 			setCode('#type your python code here');
 			setPython('#type your python code here');
-		}else if(lang==="python2.7"){
-      setCode('#type your python 2.7 code here')
-      setPyth2('#type your python 2.7 code here')
-    }
+		} else if (lang === "python2.7") {
+			setCode('#type your python 2.7 code here')
+			setPyth2('#type your python 2.7 code here')
+		}
 	};
 
 	const setLoad = () => {
@@ -219,7 +219,7 @@ function Editor() {
 									</button>
 									<button
 										type="button"
-										className="btn btn-primary btn-lg"
+										className="btn btn-success btn-lg"
 										data-dismiss="modal"
 										onClick={clickHandler}
 									>
@@ -248,13 +248,13 @@ function Editor() {
 							<option value="javascript">Javascript(Node.js)</option>
 							<option value="python">Python 3</option>
 							<option value="c_cpp">C Language</option>
-              <option value="python2.7">Python 2.7 </option>
+							<option value="python2.7">Python 2.7 </option>
 						</select>
 					</div>
 				</div>
 				<div>
 					<CodeEditor
-						mode={lang==="python2.7"?"python":lang}
+						mode={lang === "python2.7" ? "python" : lang}
 						value={code}
 						theme={mode}
 						onChange={onChange}
@@ -309,7 +309,7 @@ function Editor() {
 									</button>
 									<button
 										type="button"
-										className="btn btn-primary btn-lg"
+										className="btn btn-success btn-lg"
 										data-dismiss="modal"
 										onClick={downloadHandler}
 									>
@@ -381,7 +381,7 @@ function Editor() {
 							backgroundColor: 'beige',
 							borderRadius: '0px 0px 15px 15px'
 						}}
-						// Misty Rose ""mistyrose || Beige "beige"
+					// Misty Rose ""mistyrose || Beige "beige"
 					/>
 				</div>
 			</div>
