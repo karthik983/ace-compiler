@@ -138,9 +138,9 @@ a:active {
 	background-color: transparent;
 	text-decoration: underline;
 }
-.modal-dialog {
-	height: 30%; /* = 90% of the .modal-backdrop block = %90 of the screen */
-}
-.modal-content {
-	height: 30%; /* = 100% of the .modal-dialog block */
-}
+/* .modal-dialog { */
+	/* height: 50%; = 90% of the .modal-backdrop block = %90 of the screen */
+/* } */
+/* .modal-content { */
+	/* height: 50%; = 100% of the .modal-dialog block */
+/* } */
