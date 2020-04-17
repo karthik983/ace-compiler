@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "../img.png";
-function Navbar() {
+function Newnavbar() {
   return (
     <nav className="navbar navbar-expand-sm navbar-light  mb-3">
       <div className="pl-3">
@@ -41,7 +41,7 @@ function Navbar() {
           </li>
           <li className="nav-item ">
             <a
-              href="https://www.facebook.com/www.code.in"
+              href="#explore-head-section"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
@@ -81,4 +81,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Newnavbar;
